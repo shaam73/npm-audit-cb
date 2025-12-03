@@ -22,12 +22,13 @@ jobs:
         run: npm install
 
       - name: Step4 NPM Audit Scan and Generate Report in JSON Format
-        run: npm audit --json
-        #run: curl -X POST -H "Content-Type: application/json" -d '{"key1": "value1", "key2": "value2"}' http://35.219.178.165:8880/callback
+        run: npm audit --json > npm-audit-results.json
+        
         continue-on-error: true
 
       - name: Step5 Upload NPM Audit Scan Report to GitHub
         uses: actions/upload-artifact@v4
         with:
           name: npm-audit-results
-          path: npm-audit-results.json
+          path: npm-audit-cb 
+          #curl -X POST -H "Content-Type: application/json" -d '{"key1": "value1", "key2": "value2"}' http://35.219.178.165:8880/callback
