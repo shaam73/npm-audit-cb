@@ -33,7 +33,8 @@ jobs:
           path: npm-audit-results.json
 
       - name: Send POST request ASE
-        run: curl -X POST -H "Content-Type: application/json" -d '{"key1": "value1", "key2": "value2"}' http://35.219.178.165:8880/callback
+        run: |
+        curl -X POST -H "Content-Type: application/json" -d '{"key1": "value1", "key2": "value2"}' http://35.219.178.165:8880/callback
     
      # - uses: actions/checkout@master
       #- name: curl
