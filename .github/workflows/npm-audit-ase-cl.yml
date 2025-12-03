@@ -22,7 +22,8 @@ jobs:
         run: npm install
 
       - name: Step4 NPM Audit Scan and Generate Report in JSON Format
-        run: npm audit --json > npm-audit-results.json
+        run: npm audit --json
+        # run: npm audit --json > npm-audit-results.json
         
         continue-on-error: true
 
