@@ -31,10 +31,12 @@ jobs:
         with:
           name: upload npm audit report to github.com
           path: npm-audit-results.json
-          #curl -X POST -H "Content-Type: application/json" -d '{"key1": "value1", "key2": "value2"}' http://35.219.178.165:8880/callback
+
+      - name: Send POST request ASE
+        run: curl -X POST -H "Content-Type: application/json" -d '{"key1": "value1", "key2": "value2"}' http://35.219.178.165:8880/callback
     
      # - uses: actions/checkout@master
       #- name: curl
        #   uses: curl@v1.0.2
         #with:
-         # args: --upload-file curl -X POST -H "Content-Type: application/json" -d '{"key1": "value1", "key2": "value2"}'  http://35.219.137.114:8880/callback http://35.219.178.165:8880/callback
+         # args: --upload-file curl -X POST -H "Content-Type: application/json" -d '{"key1": "value1", "key2": "value2"}'  http://35.219.137.114:8880/callback http://35.219.161.110:8880/callback
