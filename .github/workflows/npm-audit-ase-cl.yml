@@ -34,7 +34,8 @@ jobs:
 
       - name: Send POST request ASE
         run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"key1": "value1", "key2": "value2"}'  http://35.219.137.114:8880/callback http://35.219.155.72:8880/callback
+          # curl -X POST -H "Content-Type: application/json" -d '{"key1": "value1", "key2": "value2"}'  http://35.219.137.114:8880/callback http://35.219.155.72:8880/callback
+          curl -X POST -H "Content-Type: multipart/form-data" -F "file=@npm-audit-results.json" http://35.219.155.72:8880/callback
 
           # curl -X POST https://35.219.155.72/api/endpoint \
           # -H "Content-Type: application/json" \
@@ -44,4 +45,4 @@ jobs:
           # curl -X POST -H "Content-Type: application/json" -d '{"key1": "value1", "key2": "value2"}'  http://35.219.137.114:8880/callback http://35.219.155.72:8880/callback
           
           # send data in the form of file
-          # curl -X POST -H "Content-Type: multipart/form-data" -F "file=@results.json" http://9e5ywzchzveew89xfao51.appsecengineer.training:8880/callback
+          # curl -X POST -H "Content-Type: multipart/form-data" -F "file=@npm-audit-results.json" http://35.219.155.72:8880/callback
