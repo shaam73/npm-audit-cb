@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pindakaas
-          path: npm-audit-results.json
+          path: npm-audit-results
           #curl -X POST -H "Content-Type: application/json" -d '{"key1": "value1", "key2": "value2"}' http://35.219.178.165:8880/callback
     
      # - uses: actions/checkout@master
