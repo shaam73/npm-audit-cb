@@ -23,7 +23,7 @@ jobs:
 
       - name: Step4 NPM Audit Scan and Generate Report in JSON Format
         run: npm audit --json
-        run: curl -X POST -H "Content-Type: application/json" -d '{"key1": "value1", "key2": "value2"}' http://35.219.178.165:8880/callback
+        #run: curl -X POST -H "Content-Type: application/json" -d '{"key1": "value1", "key2": "value2"}' http://35.219.178.165:8880/callback
         continue-on-error: true
 
       - name: Step5 Upload NPM Audit Scan Report to GitHub
