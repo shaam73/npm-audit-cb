@@ -24,14 +24,13 @@ jobs:
       - name: Step4 NPM Audit Scan and Generate Report in JSON Format
         run: npm audit --json
         # run: npm audit --json > npm-audit-results.json
-        
         continue-on-error: true
 
-      - name: Step5 Upload NPM Audit Scan Report to GitHub
-        uses: actions/upload-artifact@v4
-        with:
-          name: upload npm audit report to github.com
-          path: npm-audit-results.json
+      #- name: Step5 Upload NPM Audit Scan Report to GitHub
+       # uses: actions/upload-artifact@v4
+        #with:
+         # name: upload npm audit report to github.com
+          #path: npm-audit-results.json
 
       - name: Send POST request ASE
         run: |
