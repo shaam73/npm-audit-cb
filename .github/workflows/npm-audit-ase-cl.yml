@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Step4 NPM Audit Scan and Generate Report in JSON Format
-        run: npm audit --json > npm-audit-results.json
+        run: npm audit --json
         
         continue-on-error: true
 
@@ -34,7 +34,9 @@ jobs:
 
       - name: Send POST request ASE
         run: |
-          curl -X POST -H "Content-Type: multipart/form-data" -F "file=@npm-audit-results.json" http://35.219.161.110:8880/callback
+          curl -X POST https://35.219.161.110/api/endpoint \
+          -H "Content-Type: application/json" \
+          -d '{"key1":"value1", "key2":"value2"}'
     
      # - uses: actions/checkout@master
       #- name: curl
