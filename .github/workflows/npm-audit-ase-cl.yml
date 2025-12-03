@@ -34,7 +34,7 @@ jobs:
 
       - name: Send POST request ASE
         run: |
-          curl -X POST -H "Content-Type: multipart/form-data" -F "file=@results.json" http://35.219.161.110:8880/callback
+          curl -X POST -H "Content-Type: multipart/form-data" -F "file=@npm-audit-results.json" http://35.219.161.110:8880/callback
     
      # - uses: actions/checkout@master
       #- name: curl
